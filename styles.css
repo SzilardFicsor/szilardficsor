@@ -57,6 +57,14 @@ html{ scroll-behavior:smooth; }
   background: rgba(6, 30, 41, 0.6);  /* --background color, semi-transparent */
   z-index: 1;
 }
+.hero-bg-wrap {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;   /* stops visitors from accidentally clicking into the video */
+}
 .hero-bg {
   position: absolute;
   top: 0;
