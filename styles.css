@@ -21,8 +21,9 @@ html{ scroll-behavior:smooth; }
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: left;
+    
+    justify-content:center; 
+    /*padding-right: 600px;*/
     flex-direction: column;
     
 }
@@ -47,14 +48,13 @@ html{ scroll-behavior:smooth; }
     position: relative;
     z-index: 2;;
 
-    color: white;
     max-width: 500px;
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(6, 30, 41, 0.6);  /* --background color, semi-transparent */
+  background: rgba(0, 0, 0, 0.4);  /* --background color, semi-transparent */
   z-index: 1;
 }
 .hero-bg-wrap {
@@ -76,19 +76,21 @@ html{ scroll-behavior:smooth; }
 }
 
 .topnav{
-display: flex;
-gap: 24px;
-padding: 20px 40px;
-position: absolute;
-top:1; left: 1; right: 0;
-z-index: 2;
-font-family:'IBM Plex Mono', monospace;
+  display: flex;
+  gap: 24px;
+  padding: 10px 20px;
+  position: fixed;    /* was: absolute */
+  justify-content:space-between;
+  align-items:center;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;         /* needs to beat everything, including hero layers */
+  font-family: 'IBM Plex Mono', monospace;
 }
 .topnav a{
     color: var(--textColor);
     text-decoration: none;
-    font-weight: 600;
-    text-shadow: 0 1px 4px rgba(0,0,0,0,5);
 }
 
 .topnav-name{
@@ -100,9 +102,33 @@ top:1; left: 1; right: 0;
 z-index: 2;
 font-family:'IBM Plex Mono', monospace;
 }
+.topnav-element{
+  background-color: var(--background); 
+  top: 0px;left: 0px ;right: 0px;bottom: 0px;
+  z-index: 1;
+  position:absolute;
+}
+.links{
+  font-family:'IBM Plex Mono', monospace ;
+  display: flex;
+  align-items: center;
+  gap:30px;
+  margin-right: 150px;
+  z-index: inherit;
+  color:var(--accentTwo);
+  
+}
+.links a{ color:inherit;z-index: inherit;transition: color .15s ease; }
+.links a:hover{
+  color: var(--accentOne);
+}
+.mark {
+  font-family:'IBM Plex Mono', monospace ;
+  color: var(--accentTwo);
+  z-index: inherit;
+}
 
-
-.hero-text h1 {font-size: 2rem;font-family:'IBM Plex Mono', monospace; margin-bottom: 12px; color: var(--textColor);}
+.hero-text h1 {font-size: 4rem;font-family:'IBM Plex Mono', monospace; margin-bottom: 0px; margin-top: 0; color: var(--textColor);}
 .hero-text p {margin-bottom: 20px; color: var(--textColor);}
 
 .btn{
@@ -144,4 +170,13 @@ font-family:'IBM Plex Mono', monospace;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 2rem;
   margin-bottom: 16px;
+}
+
+.element-rect{
+  position: absolute;
+  top: -30px;left: -30px ;right: -30px;bottom: -30px;
+  background-color: rgba(6, 30, 41, 0.8); 
+  /*border: var(--accentTwo) solid 1px ;*/
+  border-bottom: var(--accentTwo) solid 5px;
+  z-index: -1;
 }
