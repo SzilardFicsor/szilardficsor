@@ -30,17 +30,89 @@
       <div class="element-rect"></div>
       <h1>Szilard Ficsor</h1>
       <p>Technical - VFX Artist / Independent Game Developer</p>
+      <p>Unity - Blender - Photoshop - Substance Painter - Maya</p>
       <a href="#projects" class ="btn primary">View my work</a>
       <a href="#contact" class ="btn">Contact me</a>
     </div>
   </header>
 
-  <section id ="projects" class="projects-section">
-    <h2>Selected work</h2>
-    <p>This website is currently work in progress, please visit www.szilardficsor.com</p>
-  </section>
+<section id="projects" class="projects-section">
+  <h2>Selected work</h2>
+  <div class="project-grid" id="project-grid"></div>
+</section>
 
 
-  
+<script>
+  const projects = [
+    {
+      name: "Cloud Temple",
+      type: "image",
+      src: "Images/CloudTemple.png",
+      description: "Stylised scene in Unity built with modular assets",
+      link: "projects/ledgerline.html"
+    },
+    {
+      name: "Stylised Nature",
+      type: "video",
+      src: "videos/FluffyNature_Low.mp4",
+      description: "Nature scene built in Unity with shaders.",
+      link: "projects/fieldnote.html"
+    },
+    {
+      name: "Fluffy Vegetation",
+      type: "image",
+      src: "Images/Vegetation.png",
+      description: "Vegetation shader made in Unity.",
+      link: "projects/fieldnote.html"
+    },
+    {
+      name: "Oil shader",
+      type: "image",
+      src: "Images/Oil.gif",
+      description: "Iridescent oil shader made in Unity.",
+      link: "projects/fieldnote.html"
+    },
+    {
+      name: "Narrator UI Shader",
+      type: "image",
+      src: "Images/EvilAI.gif",
+      description: "A narrator depicting an AI that can get hacked.",
+      link: "projects/fieldnote.html"
+    },
+    {
+      name: "Snack Smasher",
+      type: "image",
+      src: "Images/Snack Smasher.png",
+      description: "Solo shipped Steam title.",
+      link: "projects/fieldnote.html"
+    }
+    
+    
+  ];
+
+  const grid = document.getElementById('project-grid');
+
+  projects.forEach(project => {
+    const card = document.createElement('a');
+    card.className = 'project-card';
+    card.href = project.link;
+
+    const media = project.type === 'video'
+      ? `<video src="${project.src}" autoplay muted loop playsinline></video>`
+      : `<img src="${project.src}" alt="${project.name}">`;
+
+    card.innerHTML = `
+      ${media}
+      <div class="project-card-overlay">
+        <h3>${project.name}</h3>
+        <p>${project.description}</p>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+</script>
+</body>
+</html>
 </body>
 </html>
