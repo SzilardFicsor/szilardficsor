@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang ="en">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Landing Page</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Gelasio:ital,wght@0,400..700;1,400..700&family=Noto+Sans+SC:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Science+Gothic:wght@100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -13,95 +21,191 @@
     <div class="topnav-element"></div>
     <span class="mark"> Szilard Ficsor</span>
     <div class="links">
-      <a href="index.html">Home</a>
+      <a href="#Home">Home</a>
       <a href="#projects">Work</a>
-      <a href="#projects">About</a>
-      <a href="#projects">Contact</a>
-      
+      <a href="#About">About</a>
+      <a href="#Contact">Contact</a>
+      <a href="#Contact">Resume</a>
+
     </div>
   </nav>
 
-  <header class="hero">
+  <header id="Home" class="hero">
     <video class="hero-bg" autoplay muted loop playsinline>
-      <source src ="Videos/FluffyNature_Low.mp4" type="video/mp4">
+      <source src="Videos/FluffyNature_Low.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-text">
       <div class="element-rect"></div>
-      <h1>Szilard Ficsor</h1>
+      <h1>SZILARD FICSOR</h1>
       <p>Technical - VFX Artist / Independent Game Developer</p>
-      <p>Unity - Blender - Photoshop - Substance Painter - Maya</p>
-      <a href="#projects" class ="btn primary">View my work</a>
-      <a href="#contact" class ="btn">Contact me</a>
+      <h2>Poelkapelle - West Flanders - Belgium</h2>
+      <a href="#projects" class="btn primary">View my work</a>
+      <a href="#Contact" class="btn">Contact me</a>
     </div>
   </header>
 
-<section id="projects" class="projects-section">
-  <h2>Selected work</h2>
-  <div class="project-grid" id="project-grid"></div>
+  <section id="projects" class="projects-section">
+    <h2>Selected work</h2>
+    <div class="project-grid" id="project-grid"></div>
+  </section>
+
+  <section id="About" class="about-section">
+
+    <h2>About me</h2>
+    <div class="about-content">
+      <p>I am a Technical/VFX artist with 2+ years of experience in game development. I specialize in Unity shaders and
+        visual effects. Aside from tech art, I also have
+        good knowledge of C# and game art.</p>
+      <p> One of my proudest achievements is having shipped my own title. In the span of eight months I solo developed,
+        marketed and shipped Snack Smasher to Steam.</p>
+      <p> I studied Independent Game Production, Digital Arts and Entertainment at Howest (Kortrijk, Belgium) where I
+        graduated Cum Laude, and conducted my end of degree internship
+        at Happy Volcano (Leuven, Belgium) working on Modulus as a Tech/Game artist.
+      </p>
+      <img src=Images/FaceS.jpg class="about-img"> </img>
+      <h2>My skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-item">
+          <img src="icons/unity.svg" alt="Unity" class="skill-icon">
+        </div>
+        <div class="skill-item">
+          <img src="icons/blender.png" alt="Blender" class="skill-icon">
+        </div>
+        <div class="skill-item">
+          <img src="icons/csharp.png" alt="C#" class="skill-icon">
+        </div>
+        <div class="skill-item">
+          <img src="icons/adobe-photoshop.png" alt="Photoshop" class="skill-icon">
+        </div>
+        <div class="skill-item">
+          <img src="icons/substance.svg" alt="substance painter" class="skill-icon">
+        </div>
+        <div class="skill-item">
+          <img src="icons/github.svg" alt="github" class="skill-icon">
+        </div>
+        <div class="skill-item">
+          <img src="icons/git.svg" alt="github" class="skill-icon">
+        </div>
+        <div class="skill-item">
+          <img src="icons/fmod.svg" alt="fmod" class="skill-icon">
+        </div>
+        <div class="skill-item">
+          <img src="icons/unreal.svg" alt="unreal" class="skill-icon">
+        </div>
+        <div class="skill-item">
+          <img src="icons/blockbench.svg" alt="blockbench" class="skill-icon">
+        </div>
+        <div class="skill-item">
+          <img src="icons/maya.svg" alt="maya" class="skill-icon">
+        </div>
+        <span class="skill-label">And more...</span>
+      </div>
+
+      <a href="about.html" class="btn primary">Read more</a>
+      <a href="#About" class="btn">View resume</a>
+
+    </div>
+  </section>
+
+  <!--
+  <section id="Contact" class="contact-section">
+    <h2>Contact me</h2>
+    <div class="about-content">
+      <p>Reach out to me, I would love to hear from you!</p>
+      <p>Email me at: szilardficsor.dev@gmail.com</p>
+      
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/szilard-ficsor/" target="_blank" rel="noopener noreferrer" class="social-btn"
+        aria-label="LinkedIn">
+        <img src="icons/linkedin.svg" alt="LinkedIn" class="social-icon">
+      </a>
+      
+      <a href="mailto:szilardficsor.dev@gmail.com" class="social-btn" aria-label="Email">
+        <img src="icons/gmail.svg" alt="Email" class="social-icon">
+      </a>
+    </div>
+    
+  </div>
 </section>
+-->
 
 
-<script>
-  const projects = [
-    {
-      name: "Cloud Temple",
-      type: "image",
-      src: "Images/CloudTemple.png",
-      description: "Stylised scene in Unity built with modular assets",
-      link: "projects/ledgerline.html"
-    },
-    {
-      name: "Stylised Nature",
-      type: "video",
-      src: "videos/FluffyNature_Low.mp4",
-      description: "Nature scene built in Unity with shaders.",
-      link: "projects/fieldnote.html"
-    },
-    {
-      name: "Fluffy Vegetation",
-      type: "image",
-      src: "Images/Vegetation.png",
-      description: "Vegetation shader made in Unity.",
-      link: "projects/fieldnote.html"
-    },
-    {
-      name: "Oil shader",
-      type: "image",
-      src: "Images/Oil.gif",
-      description: "Iridescent oil shader made in Unity.",
-      link: "projects/fieldnote.html"
-    },
-    {
-      name: "Narrator UI Shader",
-      type: "image",
-      src: "Images/EvilAI.gif",
-      description: "A narrator depicting an AI that can get hacked.",
-      link: "projects/fieldnote.html"
-    },
-    {
-      name: "Snack Smasher",
-      type: "image",
-      src: "Images/Snack Smasher.png",
-      description: "Solo shipped Steam title.",
-      link: "projects/fieldnote.html"
-    }
-    
-    
-  ];
+<footer id="Contact" class="site-footer">
+  <div class="footer-content">
+    <span class="footer-mark">Let's get in touch!</span>
+    <p>szilardficsor.dev@gmail.com</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/szilard-ficsor/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.youtube.com/@ardblade_games" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/ardblade_games/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <span class="footer-copyright">&copy; 2026 Szilard Ficsor. All rights reserved.</span>
+  </div>
+</footer>
 
-  const grid = document.getElementById('project-grid');
 
-  projects.forEach(project => {
-    const card = document.createElement('a');
-    card.className = 'project-card';
-    card.href = project.link;
+  <script>
+    const projects = [
+      {
+        name: "Cloud Temple",
+        type: "image",
+        src: "Images/CloudTemple.png",
+        description: "Stylised scene in Unity built with modular assets",
+        link: "projects/ledgerline.html"
+      },
+      {
+        name: "Stylised Nature",
+        type: "video",
+        src: "videos/FluffyNature_Low.mp4",
+        description: "Nature scene built in Unity with shaders.",
+        link: "projects/fieldnote.html"
+      },
+      {
+        name: "Fluffy Vegetation",
+        type: "image",
+        src: "Images/Vegetation.png",
+        description: "Vegetation shader made in Unity.",
+        link: "projects/fieldnote.html"
+      },
+      {
+        name: "Oil shader",
+        type: "image",
+        src: "Images/Oil.gif",
+        description: "Iridescent oil shader made in Unity.",
+        link: "projects/fieldnote.html"
+      },
+      {
+        name: "Narrator UI Shader",
+        type: "image",
+        src: "Images/EvilAI.gif",
+        description: "A narrator depicting an AI that can get hacked.",
+        link: "projects/fieldnote.html"
+      },
+      {
+        name: "Snack Smasher",
+        type: "image",
+        src: "Images/Snack Smasher.png",
+        description: "Solo shipped Steam title.",
+        link: "projects/fieldnote.html"
+      }
 
-    const media = project.type === 'video'
-      ? `<video src="${project.src}" autoplay muted loop playsinline></video>`
-      : `<img src="${project.src}" alt="${project.name}">`;
 
-    card.innerHTML = `
+    ];
+
+    const grid = document.getElementById('project-grid');
+
+    projects.forEach(project => {
+      const card = document.createElement('a');
+      card.className = 'project-card';
+      card.href = project.link;
+
+      const media = project.type === 'video'
+        ? `<video src="${project.src}" autoplay muted loop playsinline></video>`
+        : `<img src="${project.src}" alt="${project.name}">`;
+
+      card.innerHTML = `
       ${media}
       <div class="project-card-overlay">
         <h3>${project.name}</h3>
@@ -109,10 +213,9 @@
       </div>
     `;
 
-    grid.appendChild(card);
-  });
-</script>
+      grid.appendChild(card);
+    });
+  </script>
 </body>
-</html>
-</body>
+
 </html>
