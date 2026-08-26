@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Volcano Internship</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Gelasio:ital,wght@0,400..700;1,400..700&family=Noto+Sans+SC:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Science+Gothic:wght@100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-element"></div>
+    <span class="mark"> Szilard Ficsor</span>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="#ModulusShaders">Work</a>
+      <a href="#Contact">Contact</a>
+      <a href="resume.html">Resume</a>
+
+    </div>
+  </nav>
+  
+  <header id="Home" class="content-banner">
+  <img class="hero-bg" src="Images/Modulus-Efficiency-Mode.jpg" alt="">
+  <div class="hero-overlay"></div>
+  <div class="content-banner-container">
+    <h1>Modulus Factory Automation</h1>
+  </div>
+</header>
+
+<section id="Overview" class="about-section">
+    <h2>Overview</h2>
+    <div class="about-content">
+      <p>In the last year of my studies at <a
+              href="https://www.digitalartsandentertainment.be" target="_blank" class="inline-link"
+              rel="noopener">Digital Arts and Entertainment</a> I conducted my internship at <a href="https://www.happyvolcano.com" target="_blank" class="inline-link"
+              rel="noopener">Happy Volcano</a> working on <a href="https://store.steampowered.com/app/2779120/Modulus_Factory_Automation/" target="_blank"
+              class="inline-link" rel="noopener">Modulus</a>. I had the role of Technical and general Game artist.
+        My responsibilities consisted of asset integration, vfx and shader development and game art creation, working closely together with the art lead. I also assumed and helped out with other miscellaneous game development tasks such 
+        as UI design and animation.
+        <ul class="custom-list">
+      </p>
+      <h1>Modulus</h1>
+      <p>Modulus is an automation game where you design your own systems and assembly lines to construct factories.
+        The game is truly unique, the building blocks you design aren’t just resources, each one you craft becomes a visible part of a structure rising in real time. No two factories will look the same,
+        your solutions are uniquely yours.
+      </p>
+      <h1>Happy Volcano</h1>
+      <p>Happy Volcano is a Belgian indie game studio located in Leuven. Aside from Modulus, they are know for their previous titles such as; 
+        <a href="https://store.steampowered.com/app/837880/You_Suck_at_Parking__Complete_Edition/" target="_blank"
+              class="inline-link" rel="noopener">You Suck at Parking</a>, <a href="https://store.steampowered.com/app/1115780/The_Almost_Gone/" target="_blank"
+              class="inline-link" rel="noopener">The Alomst Gone</a> and more.
+      </p>
+      <img src=Images/ModulusKeyart.png class="about-img"> </img>
+
+    </div>
+  </section>
+
+ <section id="carousel1" class="carousel-section">
+  <h2>Game Screenshots</h2>
+  <div class="carousel-wrap" data-speed="0.3">
+    <div class="carousel-track"></div>
+  </div>
+</section>
+
+<section id="ModulusShaders" class="about-section">
+    <h2>My work on Modulus</h2>
+    <div class="about-content">
+      <p>During this internship I created various different shaders and visual effects. Ranging from factory visuals to environment dressing. Some of my work:
+      </p>
+      <div class = "project-grid" id="project-grid"></div>
+      
+
+    </div>
+</section>
+<section id="Overview" class="about-section">
+    <h2>Reccomendations from the team</h2>
+    <div class="about-content">
+      <p>"Szilard was fantastic to work with! He surpassed what was expected of him and seemed in the end more like a colleague than an intern. He is already extremely professional, always eager to learn, adapt and work hard for the good of the project.
+         I particularly appreciated his openness to feedback and his technical skills. Would easily recommend him to any dev team! Great work Szilard!"
+      </p>
+      <p2>Antoine Lendrevie - Video Games Art Director / Lead artist - Happy Volcano - 2025 </p2>
+
+      <p>"I had the pleasure of working with Szilard during his internship at Happy Volcano, and he was truly outstanding. His art consistently elevated the quality of our project — beautiful, thoughtful, and always delivered with care.
+He was quick to adapt, open to feedback, and a fantastic collaborator. For an intern, his impact was well beyond expectations. I’d highly recommend him to any team looking for a talented and dependable artist."
+      </p>
+      <p2>Preet Mokha - QA Enigneer - Happy Volcano - 2025 </p2>
+      <img src=Images/Atlas.png class="about-img"> </img>
+
+    </div>
+  </section>
+
+  <section class ="note-section">
+    <p>Please note that some visuals on this page were not captured or made by me: (Modulus screenshots, key art) - Credits to Happy Volcano.</p>
+  </section>
+
+<div class="gallery-lightbox" id="galleryLightbox">
+  <button class="lightbox-close" id="galleryClose" aria-label="Close">&times;</button>
+  <button class="lightbox-arrow lightbox-arrow-left" id="galleryPrev" aria-label="Previous image">&#8249;</button>
+
+  <div class="gallery-lightbox-content">
+    <img id="galleryImg" src="" alt="">
+    <div class="gallery-caption">
+      <h3 id="galleryTitle"></h3>
+      <p id="galleryDescription"></p>
+      <span id="galleryCounter"></span>
+    </div>
+  </div>
+
+  <button class="lightbox-arrow lightbox-arrow-right" id="galleryNext" aria-label="Next image">&#8250;</button>
+</div>
+  
+<!--
+<section id="carousel2" class="carousel-section">
+  <div class="carousel-wrap" data-speed="0.3">
+    <div class="carousel-track"></div>
+  </div>
+</section>
+-->
+<!-- Lightbox stays single — shared by every carousel -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+ 
+
+
+<footer id="Contact" class="site-footer">
+  <div class="footer-content">
+    <span class="footer-mark">Let's get in touch!</span>
+    <p>szilardficsor.dev@gmail.com</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/szilard-ficsor/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.youtube.com/@ardblade_games" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/ardblade_games/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <span class="footer-copyright">&copy; 2026 Szilard Ficsor. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  // --- Shared lightbox (only ONE needed for the whole page) ---
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+  let lightboxOpen = false;
+
+  function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.classList.add('active');
+    lightboxOpen = true;
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxOpen = false;
+  }
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // --- Reusable carousel builder ---
+  function initCarousel(wrap, images) {
+    const track = wrap.querySelector('.carousel-track');
+    const autoSpeed = parseFloat(wrap.dataset.speed) || 0.6;
+
+    const loopedImages = [...images, ...images, ...images];
+
+    loopedImages.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.className = 'carousel-img';
+      img.draggable = false;
+      img.dataset.src = src;
+      track.appendChild(img);
+    });
+
+    let position = 0;
+    let isDragging = false;
+    let hasDragged = false;
+    let startX = 0;
+    let startPosition = 0;
+    let oneSetWidth = 0;
+
+    function measureSetWidth() {
+      oneSetWidth = track.scrollWidth / 3;
+    }
+    window.addEventListener('load', measureSetWidth);
+    window.addEventListener('resize', measureSetWidth);
+
+    wrap.addEventListener('pointerdown', (e) => {
+      isDragging = true;
+      hasDragged = false;
+      startX = e.clientX;
+      startPosition = position;
+      wrap.classList.add('dragging');
+      wrap.setPointerCapture(e.pointerId);
+    });
+
+    wrap.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      const delta = e.clientX - startX;
+      if (Math.abs(delta) > 5) hasDragged = true;
+      position = startPosition + delta;
+    });
+
+    function endDrag(e) {
+      isDragging = false;
+      wrap.classList.remove('dragging');
+
+      if (!hasDragged) {
+        const clickedImg = document.elementFromPoint(e.clientX, e.clientY);
+        if (clickedImg && clickedImg.classList.contains('carousel-img')) {
+          openLightbox(clickedImg.dataset.src);
+        }
+      }
+    }
+    wrap.addEventListener('pointerup', endDrag);
+    wrap.addEventListener('pointerleave', endDrag);
+
+    function updateImageEffects() {
+      const wrapRect = wrap.getBoundingClientRect();
+      const centerX = wrapRect.left + wrapRect.width / 2;
+      const maxDistance = wrapRect.width / 2;
+
+      track.querySelectorAll('.carousel-img').forEach(img => {
+        const imgRect = img.getBoundingClientRect();
+        const imgCenter = imgRect.left + imgRect.width / 2;
+        const distance = Math.abs(imgCenter - centerX);
+        const ratio = Math.min(distance / maxDistance, 1);
+
+        const scale = 1 - ratio * 0.35;
+        const opacity = 1 - ratio * 0.75;
+
+        img.style.transform = `scale(${scale})`;
+        img.style.opacity = opacity;
+      });
+    }
+
+    function tick() {
+      if (!isDragging && !lightboxOpen) {
+        position -= autoSpeed;
+      }
+      if (oneSetWidth > 0) {
+        if (position <= -oneSetWidth * 2) position += oneSetWidth;
+        if (position > -oneSetWidth * 0.5) position -= oneSetWidth;
+      }
+      track.style.transform = `translateX(${position}px)`;
+      updateImageEffects();
+      requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  // --- Initialize each carousel with its own image set ---
+  initCarousel(document.querySelectorAll('.carousel-wrap')[0], [
+    "images/Modulus-Factory-At-Night.jpg",
+    "images/Modulus-GreyNexus.jpg",
+    "images/Modulus-Cutting-A-Module.jpg",
+    "images/Modulus-Factory-At-Dawn.jpg",
+    "images/Modulus-Module-Challenges.jpg",
+    "images/Modulus-Efficiency-Mode.jpg"
+  ]);
+
+  initCarousel(document.querySelectorAll('.carousel-wrap')[1], [
+    "images/Oil.gif",
+    "images/EvilAI.gif",
+    "images/Oil.gif",
+    "images/EvilAI.gif"
+  ]);
+</script>
+
+<script>
+    const projects = [
+  {
+    name: "Fluffy Vegetation",
+    type: "image",
+    src: "Images/Vegetation.png",              
+    description: "Vegetation shader surrounding the islands.",
+    gallery: [
+      "Images/Vegetation.png",
+      "Images/07_VegetationExtras.png",
+      "Images/06_Vegetation.png",
+      "Images/06_VegetationVines.png",
+      "Images/VegetationVariation.png"
+    ]
+  },
+  {
+    name: "Oil shader",
+    type: "image",
+    src: "Images/Oil.gif",
+    description: "Iridescent oil shader made for a resource.",
+    gallery: [
+      "Images/Oil.gif",
+      "Images/OilBall.png"
+    ]
+  },
+  {
+    name: "Narrator UI Shader",
+    type: "image",
+    src: "Images/EvilAI.gif",
+    description: "A UI 'companion' depicting a hacked AI.",
+    gallery: [
+      "Images/EvilAI.gif",
+      "Images/GNN-Narrator-Portrait.gif"
+    ]
+  },
+  {
+    name: "Electric arc",
+    type: "image",
+    src: "Images/ElectricArc.gif",
+    description: "Electric arc visual effect with adjustable curves.",
+    gallery: [
+      "Images/ElectricArc.gif",
+    ]
+  },
+  {
+    name: "Coolant liquid shader",
+    type: "image",
+    src: "Images/Coolant.gif",
+    description: "Liquid shader made for a coolant resource.",
+    gallery: [
+      "Images/Coolant.gif",
+      "Images/CoolantTank.png"
+    ]
+  },
+  {
+    name: "Datashard shader",
+    type: "image",
+    src: "Images/Datashards.gif",
+    description: "Shader made for a resource, different variants.",
+    gallery: [
+      "Images/Datashards.gif",
+    ]
+  }
+];
+
+    const grid = document.getElementById('project-grid');
+
+  // --- Build the cards ---
+  projects.forEach((project, index) => {
+    const card = document.createElement('div');   // was <a>, now a plain div
+    card.className = 'project-card';
+
+    const media = project.type === 'video'
+      ? `<video src="${project.src}" autoplay muted loop playsinline></video>`
+      : `<img src="${project.src}" alt="${project.name}">`;
+
+    card.innerHTML = `
+      ${media}
+      <div class="project-card-overlay">
+        <h3>${project.name}</h3>
+        <h3>${project.description}</h3>
+      </div>
+    `;
+
+    card.addEventListener('click', () => openGallery(index));
+    grid.appendChild(card);
+  });
+
+  // --- Gallery lightbox state ---
+  const galleryLightbox = document.getElementById('galleryLightbox');
+  const galleryImg = document.getElementById('galleryImg');
+  const galleryTitle = document.getElementById('galleryTitle');
+  const galleryDescription = document.getElementById('galleryDescription');
+  const galleryCounter = document.getElementById('galleryCounter');
+  const galleryClose = document.getElementById('galleryClose');
+  const galleryPrev = document.getElementById('galleryPrev');
+  const galleryNext = document.getElementById('galleryNext');
+
+  let currentProject = null;
+  let currentImageIndex = 0;
+
+  function openGallery(projectIndex) {
+    currentProject = projects[projectIndex];
+    currentImageIndex = 0;
+    updateGalleryImage();
+    galleryLightbox.classList.add('active');
+  }
+
+  function updateGalleryImage() {
+    const images = currentProject.gallery;
+    galleryImg.src = images[currentImageIndex];
+    galleryTitle.textContent = currentProject.name;
+    galleryDescription.textContent = currentProject.description;
+    galleryCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+
+    // Hide arrows entirely if there's only one image
+    const hasMultiple = images.length > 1;
+    galleryPrev.style.display = hasMultiple ? 'flex' : 'none';
+    galleryNext.style.display = hasMultiple ? 'flex' : 'none';
+  }
+
+  function showNextImage() {
+    const images = currentProject.gallery;
+    currentImageIndex = (currentImageIndex + 1) % images.length;   // wraps back to 0 at the end
+    updateGalleryImage();
+  }
+
+  function showPrevImage() {
+    const images = currentProject.gallery;
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;   // wraps to the last image
+    updateGalleryImage();
+  }
+
+  function closeGallery() {
+    galleryLightbox.classList.remove('active');
+    currentProject = null;
+  }
+
+  galleryNext.addEventListener('click', showNextImage);
+  galleryPrev.addEventListener('click', showPrevImage);
+  galleryClose.addEventListener('click', closeGallery);
+
+  galleryLightbox.addEventListener('click', (e) => {
+    if (e.target === galleryLightbox) closeGallery();
+  });
+
+  // Keyboard support: arrow keys + escape
+  document.addEventListener('keydown', (e) => {
+    if (!galleryLightbox.classList.contains('active')) return;
+    if (e.key === 'ArrowRight') showNextImage();
+    if (e.key === 'ArrowLeft') showPrevImage();
+    if (e.key === 'Escape') closeGallery();
+  });
+  </script>
+</body>
+
+</html>
