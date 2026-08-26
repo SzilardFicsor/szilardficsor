@@ -928,6 +928,7 @@ border-bottom: 6px solid var(--accentTwo);
   max-width: 646px;
   width: 100%;
   margin: 0 auto;
+  display: flex;
 }
 
 .steam-widget-wrap iframe {
@@ -936,8 +937,8 @@ border-bottom: 6px solid var(--accentTwo);
   border-radius: 6px;
 }
 .video-section {
-  margin-left:  5%;
-  margin-right: 5%;
+  margin-left:  10%;
+  margin-right: 10%;
   padding: 60px 20px;
   color: var(--textColor);
 }
