@@ -36,6 +36,15 @@ html{ scroll-behavior:smooth; }
     object-fit: cover;
     margin: auto;
 }
+.hero-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  max-width: 40%;
+  height: auto;
+  z-index: 2;
+}
 
 .hero-text{
     position:relative;
