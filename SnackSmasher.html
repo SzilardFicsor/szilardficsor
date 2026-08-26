@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Volcano Internship</title>
+  <title>Snack Smasher</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="favicon.png">
 
@@ -52,25 +52,46 @@
       <img src=Images/library_capsule_v2.png class="about-img"> </img>
 
     </div>
-  </section>
+</section>
+ 
+<section class="video-section">
+  <div class="video-embed-wrap">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/9HLgWjCWoOw"
+      title="Snack Smasher Trailer"
+      frameborder="0"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="autoplay; fullscreen"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
 
- <section id="carousel1" class="carousel-section">
+
+<section id="carousel1" class="carousel-section">
   <h2>Game Screenshots</h2>
   <div class="carousel-wrap" data-speed="0.3">
     <div class="carousel-track"></div>
   </div>
 </section>
 
-<section id="ModulusShaders" class="about-section">
+<section id="Work" class="about-section">
     <h2>My work</h2>
     <div class="about-content">
-      <p>During this internship I created various different shaders and visual effects. Ranging from factory visuals to environment dressing. Some of my work:
+      <p>Highlighted work I did on this project:
       </p>
       <div class = "project-grid" id="project-grid"></div>
       
 
     </div>
 </section>
+
+ <div class="steam-widget-wrap">
+  <iframe
+    src="https://store.steampowered.com/widget/4418770/"
+    frameborder="0">
+  </iframe>
+     </div>
 
 <div class="gallery-lightbox" id="galleryLightbox">
   <button class="lightbox-close" id="galleryClose" aria-label="Close">&times;</button>
@@ -255,64 +276,32 @@
 <script>
     const projects = [
   {
-    name: "Fluffy Vegetation",
+    name: "Pixel art and effects",
     type: "image",
-    src: "Images/Vegetation.png",              
-    description: "Vegetation shader surrounding the islands.",
+    src: "Images/SnackSmasher/Apple.png",             
+    description: "Extensive pixel art visuals and effects.",
     gallery: [
-      "Images/Vegetation.png",
-      "Images/07_VegetationExtras.png",
-      "Images/06_Vegetation.png",
-      "Images/06_VegetationVines.png",
-      "Images/VegetationVariation.png"
+      "Images/SnackSmasher/Apple.png",
     ]
   },
   {
-    name: "Oil shader",
+    name: "Capsule art",
     type: "image",
-    src: "Images/Oil.gif",
-    description: "Iridescent oil shader made for a resource.",
+    src: "Images/SnackSmasher/Capsule_1920x1080.png",
+    description: "Capsule art creation for Steam.",
     gallery: [
-      "Images/Oil.gif",
-      "Images/OilBall.png"
+      "Images/SnackSmasher/Capsule_1920x1080.png",
+      "Images/library_capsule_v2.png"
     ]
   },
   {
-    name: "Narrator UI Shader",
+    name: "Upgrade tree",
     type: "image",
-    src: "Images/EvilAI.gif",
-    description: "A UI 'companion' depicting a hacked AI.",
+    src: "Images/SnackSmasher/UpgradeTree.gif",
+    description: "Upgrade tree with 50+ upgrade options.",
     gallery: [
-      "Images/EvilAI.gif",
-      "Images/GNN-Narrator-Portrait.gif"
-    ]
-  },
-  {
-    name: "Electric arc",
-    type: "image",
-    src: "Images/ElectricArc.gif",
-    description: "Electric arc visual effect with adjustable curves.",
-    gallery: [
-      "Images/ElectricArc.gif",
-    ]
-  },
-  {
-    name: "Coolant liquid shader",
-    type: "image",
-    src: "Images/Coolant.gif",
-    description: "Liquid shader made for a coolant resource.",
-    gallery: [
-      "Images/Coolant.gif",
-      "Images/CoolantTank.png"
-    ]
-  },
-  {
-    name: "Datashard shader",
-    type: "image",
-    src: "Images/Datashards.gif",
-    description: "Shader made for a resource, different variants.",
-    gallery: [
-      "Images/Datashards.gif",
+      "Images/SnackSmasher/UpgradeTree.gif",
+      "Images/SnackSmasher/19.png"
     ]
   }
 ];
