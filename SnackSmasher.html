@@ -41,13 +41,10 @@
 <section id="Overview" class="about-section">
     <h2>Overview</h2>
     <div class="about-content">
-      <p>In the last year of my studies at <a
-              href="https://www.digitalartsandentertainment.be" target="_blank" class="inline-link"
-              rel="noopener">Digital Arts and Entertainment</a> I conducted my internship at <a href="https://www.happyvolcano.com" target="_blank" class="inline-link"
-              rel="noopener">Happy Volcano</a> working on <a href="https://store.steampowered.com/app/2779120/Modulus_Factory_Automation/" target="_blank"
-              class="inline-link" rel="noopener">Modulus</a>. I had the role of Technical and general Game artist.
-        My responsibilities consisted of asset integration, vfx and shader development and game art creation, working closely together with the art lead. I also assumed and helped out with other miscellaneous game development tasks such 
-        as UI design and animation.
+      <p>As my first "real" game I choose to make an incremental nodebuster-like; Snack Smasher, it's a game all about crushing fruits and snacks, unlocking upgrades, collecting unique powerups and 
+        obliterating everything in your path!
+      </p>
+      <p>The game took about 8 months of solo development.</p>
       
       <img src=Images/library_capsule_v2.png class="about-img"> </img>
 
@@ -67,10 +64,25 @@
   </div>
 </section>
 
+<section id="videoCarousel" class="carousel-section">
+  <h2>Content creator coverage</h2>
+  <div class="carousel-wrap" data-speed="0.3" id="videoCarouselWrap">
+    <div class="carousel-track"></div>
+  </div>
+</section>
+
+<div class="video-lightbox" id="videoLightbox">
+  <button class="lightbox-close" id="videoLightboxClose" aria-label="Close">&times;</button>
+  <div class="video-lightbox-content">
+    <iframe id="videoLightboxFrame" src="" frameborder="0"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
 
 <section id="carousel1" class="carousel-section">
   <h2>Game Screenshots</h2>
-  <div class="carousel-wrap" data-speed="0.3">
+  <div class="carousel-wrap" data-speed="0.3" id="screenshotsCarouselWrap">
     <div class="carousel-track"></div>
   </div>
 </section>
@@ -145,7 +157,7 @@
 </footer>
 
 <script>
-  // --- Shared lightbox (only ONE needed for the whole page) ---
+  
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
@@ -260,7 +272,7 @@
   }
 
   // --- Initialize each carousel with its own image set ---
-  initCarousel(document.querySelectorAll('.carousel-wrap')[0], [
+  initCarousel(document.getElementById('screenshotsCarouselWrap'), [
     "Images/SnackSmasher/18.png",
     "Images/SnackSmasher/19.png",
     "Images/SnackSmasher/20.png",
@@ -268,15 +280,19 @@
     "Images/SnackSmasher/24.png",
     "Images/SnackSmasher/26.png",
     "Images/SnackSmasher/screenshot_2026-07-14_17-26-14.png"
-    
   ]);
 
-  initCarousel(document.querySelectorAll('.carousel-wrap')[1], [
-    "images/Oil.gif",
-    "images/EvilAI.gif",
-    "images/Oil.gif",
-    "images/EvilAI.gif"
-  ]);
+  //initCarousel(document.querySelectorAll('.carousel-wrap')[0], [
+    //"Images/SnackSmasher/18.png",
+    //"Images/SnackSmasher/19.png",
+    //"Images/SnackSmasher/20.png",
+    
+  //]);
+
+  //initCarousel(document.querySelectorAll('.carousel-wrap')[1], [
+    //"images/Oil.gif",
+    //"images/EvilAI.gif",
+  //]);
 </script>
 
 <script>
@@ -401,6 +417,9 @@
     if (e.key === 'Escape') closeGallery();
   });
   </script>
+
+
+  <script src="videoCarousel.js"></script>
 </body>
 
 </html>
