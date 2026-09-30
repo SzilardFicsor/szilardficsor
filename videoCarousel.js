@@ -19,7 +19,7 @@ loopedVideos.forEach(video => {
   wrapper.dataset.videoId = video.id;
   wrapper.innerHTML = `
     <img src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg" alt="${video.title}">
-    <div class="play-icon">&#9658;</div>
+    <div class="play-icon">Play</div>
   `;
   videoTrack.appendChild(wrapper);
 });
