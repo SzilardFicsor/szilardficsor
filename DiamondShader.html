@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Shader</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Gelasio:ital,wght@0,400..700;1,400..700&family=Noto+Sans+SC:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Science+Gothic:wght@100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-element"></div>
+    <span class="mark"> Szilard Ficsor</span>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="#ModulusShaders">Work</a>
+      <a href="#Contact">Contact</a>
+      <a href="resume.html">Resume</a>
+
+    </div>
+  </nav>
+  
+ <header id="Home" class="content-banner">
+    <img class="hero-bg" src="Images/Gem/Gem_Hero.png" alt="">
+    <div class="hero-overlay"></div>
+    <div class="content-banner-container">
+      <h1>Diamond Shader</h1>
+    </div>
+    
+  </header>
+
+<section id="Overview" class="about-section">
+    <h2>Overview</h2>
+    <div class="about-content">
+      <p>This is a simple diamond shader that uses Tangent Bitangent and Normal vectors to create a depth effect within the mesh. Together with a texture we achieve a stylised diamond or gem look.
+      </p>
+
+      <p>This shader was made in Unity with shadergraph.</p>
+      
+    </div>
+</section>
+ 
+
+<div class="video-lightbox" id="videoLightbox">
+  <button class="lightbox-close" id="videoLightboxClose" aria-label="Close">&times;</button>
+  <div class="video-lightbox-content">
+    <iframe id="videoLightboxFrame" src="" frameborder="0"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
+<section id="Work" class="about-section">
+    <h2>Showcase</h2>
+    <div class="about-content">
+      <div class = "project-grid" id="project-grid"></div>
+      
+
+    </div>
+</section> 
+
+<!--
+<section id="carousel1" class="carousel-section">
+  <h2>Scene Screenshots</h2>
+  <div class="carousel-wrap" data-speed="0.3" id="screenshotsCarouselWrap">
+    <div class="carousel-track"></div>
+  </div>
+</section>
+-->
+
+
+<div class="gallery-lightbox" id="galleryLightbox">
+  <button class="lightbox-close" id="galleryClose" aria-label="Close">&times;</button>
+  <button class="lightbox-arrow lightbox-arrow-left" id="galleryPrev" aria-label="Previous image">&#8249;</button>
+
+  <div class="gallery-lightbox-content">
+    <div id="galleryMedia" class="gallery-media"></div>
+    <div class="gallery-caption">
+      <h3 id="galleryTitle"></h3>
+      <p id="galleryDescription"></p>
+      <span id="galleryCounter"></span>
+    </div>
+  </div>
+
+  <button class="lightbox-arrow lightbox-arrow-right" id="galleryNext" aria-label="Next image">&#8250;</button>
+</div>
+  
+<!--
+<section id="carousel2" class="carousel-section">
+  <div class="carousel-wrap" data-speed="0.3">
+    <div class="carousel-track"></div>
+  </div>
+</section>
+-->
+<!-- Lightbox stays single — shared by every carousel -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+ 
+
+
+<footer id="Contact" class="site-footer">
+  <div class="footer-content">
+    <span class="footer-mark">Let's get in touch!</span>
+    <p>szilardficsor.dev@gmail.com</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/szilard-ficsor/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.youtube.com/@ardblade_games" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/ardblade_games/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <span class="footer-copyright">&copy; 2026 Szilard Ficsor. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+  let lightboxOpen = false;
+
+  function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.classList.add('active');
+    lightboxOpen = true;
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxOpen = false;
+  }
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // --- Reusable carousel builder ---
+  function initCarousel(wrap, images) {
+    const track = wrap.querySelector('.carousel-track');
+    const autoSpeed = parseFloat(wrap.dataset.speed) || 0.6;
+
+    const loopedImages = [...images, ...images, ...images];
+
+    loopedImages.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.className = 'carousel-img';
+      img.draggable = false;
+      img.dataset.src = src;
+      track.appendChild(img);
+    });
+
+    let position = 0;
+    let isDragging = false;
+    let hasDragged = false;
+    let startX = 0;
+    let startPosition = 0;
+    let oneSetWidth = 0;
+
+    function measureSetWidth() {
+      oneSetWidth = track.scrollWidth / 3;
+    }
+    window.addEventListener('load', measureSetWidth);
+    window.addEventListener('resize', measureSetWidth);
+
+    wrap.addEventListener('pointerdown', (e) => {
+      isDragging = true;
+      hasDragged = false;
+      startX = e.clientX;
+      startPosition = position;
+      wrap.classList.add('dragging');
+      wrap.setPointerCapture(e.pointerId);
+    });
+
+    wrap.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      const delta = e.clientX - startX;
+      if (Math.abs(delta) > 5) hasDragged = true;
+      position = startPosition + delta;
+    });
+
+    function endDrag(e) {
+      isDragging = false;
+      wrap.classList.remove('dragging');
+
+      if (!hasDragged) {
+        const clickedImg = document.elementFromPoint(e.clientX, e.clientY);
+        if (clickedImg && clickedImg.classList.contains('carousel-img')) {
+          openLightbox(clickedImg.dataset.src);
+        }
+      }
+    }
+    wrap.addEventListener('pointerup', endDrag);
+    wrap.addEventListener('pointerleave', endDrag);
+
+    function updateImageEffects() {
+      const wrapRect = wrap.getBoundingClientRect();
+      const centerX = wrapRect.left + wrapRect.width / 2;
+      const maxDistance = wrapRect.width / 2;
+
+      track.querySelectorAll('.carousel-img').forEach(img => {
+        const imgRect = img.getBoundingClientRect();
+        const imgCenter = imgRect.left + imgRect.width / 2;
+        const distance = Math.abs(imgCenter - centerX);
+        const ratio = Math.min(distance / maxDistance, 1);
+
+        const scale = 1 - ratio * 0.35;
+        const opacity = 1 - ratio * 0.75;
+
+        img.style.transform = `scale(${scale})`;
+        img.style.opacity = opacity;
+      });
+    }
+
+    function tick() {
+      if (!isDragging && !lightboxOpen) {
+        position -= autoSpeed;
+      }
+      if (oneSetWidth > 0) {
+        if (position <= -oneSetWidth * 2) position += oneSetWidth;
+        if (position > -oneSetWidth * 0.5) position -= oneSetWidth;
+      }
+      track.style.transform = `translateX(${position}px)`;
+      updateImageEffects();
+      requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  // --- Initialize each carousel with its own image set ---
+  initCarousel(document.getElementById('screenshotsCarouselWrap'), [
+    "Images/FluffyNature/FluffyNature_Final_Szilard_Ficsor.png",
+    "Images/FluffyNature/FluffyNature_Screenshots_01_Szilard_Ficsor.png",
+    "Images/FluffyNature/FluffyNature_Screenshots_02_Szilard_Ficsor.png",
+    "Images/FluffyNature/FluffyNature_Screenshots_03_Szilard_Ficsor.png"
+    
+  ]);
+
+  //initCarousel(document.querySelectorAll('.carousel-wrap')[0], [
+    //"Images/SnackSmasher/18.png",
+    //"Images/SnackSmasher/19.png",
+    //"Images/SnackSmasher/20.png",
+    
+  //]);
+
+  //initCarousel(document.querySelectorAll('.carousel-wrap')[1], [
+    //"images/Oil.gif",
+    //"images/EvilAI.gif",
+  //]);
+</script>
+
+
+
+
+  <script src="videoCarousel.js"></script>
+
+    <script>
+    const projects = [
+      {
+        name: "Diamond",
+        type: "image",
+        src: "Images/Gem/Gem_Thumbnail.png",
+        description: "",
+        gallery: [
+       
+           { type: "video", src: "Images/Gem/Diamond_showcase.mp4", caption: "" }
+        ]
+      },
+      {
+        name: "Material",
+        type: "image",
+        src: "Images/Gem/Card_Material.png",
+        description: "Shader material showcase.",
+        gallery: [
+          { type: "video", src: "Images/Gem/Material_Showcase.mp4", caption: "Adjusting textures, offset and colors." }
+        ]
+      }
+      
+    ];
+  </script>
+  <script src="gallery.js"></script>
+</body>
+</html>
+</body>
+
+</html>

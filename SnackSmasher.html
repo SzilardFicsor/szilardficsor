@@ -116,7 +116,7 @@
   <button class="lightbox-arrow lightbox-arrow-left" id="galleryPrev" aria-label="Previous image">&#8249;</button>
 
   <div class="gallery-lightbox-content">
-    <img id="galleryImg" src="" alt="">
+    <div id="galleryMedia" class="gallery-media"></div>
     <div class="gallery-caption">
       <h3 id="galleryTitle"></h3>
       <p id="galleryDescription"></p>
@@ -295,131 +295,44 @@
   //]);
 </script>
 
-<script>
+
+
+<script src="videoCarousel.js"></script>
+
+ <script>
     const projects = [
-  {
-    name: "Pixel art and effects",
-    type: "image",
-    src: "Images/SnackSmasher/Apple.png",             
-    description: "Extensive pixel art visuals and effects.",
-    gallery: [
-      "Images/SnackSmasher/Apple.png",
-    ]
-  },
-  {
-    name: "Capsule art",
-    type: "image",
-    src: "Images/SnackSmasher/Capsule_1920x1080.png",
-    description: "Capsule art creation for Steam.",
-    gallery: [
-      "Images/SnackSmasher/Capsule_1920x1080.png",
-      "Images/library_capsule_v2.png"
-    ]
-  },
-  {
-    name: "Upgrade tree",
-    type: "image",
-    src: "Images/SnackSmasher/UpgradeTree.gif",
-    description: "Upgrade tree with 50+ upgrade options.",
-    gallery: [
-      "Images/SnackSmasher/UpgradeTree.gif",
-      "Images/SnackSmasher/19.png"
-    ]
-  }
-];
-
-    const grid = document.getElementById('project-grid');
-
-  // --- Build the cards ---
-  projects.forEach((project, index) => {
-    const card = document.createElement('div');   // was <a>, now a plain div
-    card.className = 'project-card';
-
-    const media = project.type === 'video'
-      ? `<video src="${project.src}" autoplay muted loop playsinline></video>`
-      : `<img src="${project.src}" alt="${project.name}">`;
-
-    card.innerHTML = `
-      ${media}
-      <div class="project-card-overlay">
-        <h3>${project.name}</h3>
-        <h3>${project.description}</h3>
-      </div>
-    `;
-
-    card.addEventListener('click', () => openGallery(index));
-    grid.appendChild(card);
-  });
-
-  // --- Gallery lightbox state ---
-  const galleryLightbox = document.getElementById('galleryLightbox');
-  const galleryImg = document.getElementById('galleryImg');
-  const galleryTitle = document.getElementById('galleryTitle');
-  const galleryDescription = document.getElementById('galleryDescription');
-  const galleryCounter = document.getElementById('galleryCounter');
-  const galleryClose = document.getElementById('galleryClose');
-  const galleryPrev = document.getElementById('galleryPrev');
-  const galleryNext = document.getElementById('galleryNext');
-
-  let currentProject = null;
-  let currentImageIndex = 0;
-
-  function openGallery(projectIndex) {
-    currentProject = projects[projectIndex];
-    currentImageIndex = 0;
-    updateGalleryImage();
-    galleryLightbox.classList.add('active');
-  }
-
-  function updateGalleryImage() {
-    const images = currentProject.gallery;
-    galleryImg.src = images[currentImageIndex];
-    galleryTitle.textContent = currentProject.name;
-    galleryDescription.textContent = currentProject.description;
-    galleryCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
-
-    // Hide arrows entirely if there's only one image
-    const hasMultiple = images.length > 1;
-    galleryPrev.style.display = hasMultiple ? 'flex' : 'none';
-    galleryNext.style.display = hasMultiple ? 'flex' : 'none';
-  }
-
-  function showNextImage() {
-    const images = currentProject.gallery;
-    currentImageIndex = (currentImageIndex + 1) % images.length;   // wraps back to 0 at the end
-    updateGalleryImage();
-  }
-
-  function showPrevImage() {
-    const images = currentProject.gallery;
-    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;   // wraps to the last image
-    updateGalleryImage();
-  }
-
-  function closeGallery() {
-    galleryLightbox.classList.remove('active');
-    currentProject = null;
-  }
-
-  galleryNext.addEventListener('click', showNextImage);
-  galleryPrev.addEventListener('click', showPrevImage);
-  galleryClose.addEventListener('click', closeGallery);
-
-  galleryLightbox.addEventListener('click', (e) => {
-    if (e.target === galleryLightbox) closeGallery();
-  });
-
-  // Keyboard support: arrow keys + escape
-  document.addEventListener('keydown', (e) => {
-    if (!galleryLightbox.classList.contains('active')) return;
-    if (e.key === 'ArrowRight') showNextImage();
-    if (e.key === 'ArrowLeft') showPrevImage();
-    if (e.key === 'Escape') closeGallery();
-  });
+      {
+        name: "Pixel art and effects",
+        type: "image",
+        src: "Images/SnackSmasher/Apple.png",
+        description: "Extensive pixel art visuals and effects.",
+        gallery: [
+          { src: "Images/SnackSmasher/Apple.png", caption: "Apple sprite with hit and destruction effects." }
+        ]
+      },
+      {
+        name: "Capsule art",
+        type: "image",
+        src: "Images/SnackSmasher/Capsule_1920x1080.png",
+        description: "Capsule art creation for Steam.",
+        gallery: [
+          { src: "Images/SnackSmasher/Capsule_1920x1080.png", caption: "Main capsule art for the Steam store page." },
+          { src: "Images/library_capsule_v2.png", caption: "Library capsule variant." }
+        ]
+      },
+      {
+        name: "Upgrade Tree",
+        type: "image",
+        src: "Images/SnackSmasher/UpgradeTree.gif",
+        description: "Upgrade tree with 50+ upgrade options.",
+        gallery: [
+          { src: "Images/SnackSmasher/UpgradeTree.gif", caption: "Epxanding animations." },
+          { src: "Images/SnackSmasher/19.png", caption: "" }
+        ]
+      }
+    ];
   </script>
-
-
-  <script src="videoCarousel.js"></script>
+  <script src="gallery.js"></script>
 </body>
 
 </html>
