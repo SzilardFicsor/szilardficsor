@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Robot</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Gelasio:ital,wght@0,400..700;1,400..700&family=Noto+Sans+SC:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Science+Gothic:wght@100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-element"></div>
+    <span class="mark"> Szilard Ficsor</span>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="#ModulusShaders">Work</a>
+      <a href="#Contact">Contact</a>
+      <a href="resume.html">Resume</a>
+
+    </div>
+  </nav>
+  
+ <header id="Home" class="hero">
+    <video class="hero-bg" autoplay muted loop playsinline>
+      <source src="Images/Robot/2IGP13_E_Ficsor_Szilard_robuddy_Blender.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="content-banner-container">
+      <h1>Animated Robot</h1>
+    </div>
+  </header>
+
+<section id="Overview" class="about-section">
+    <h2>Overview</h2>
+    <div class="about-content">
+      <p>This is a game ready, optimized and animated character. The concept for this project was a robot that has a profession, which is in this case a mining robot. It was a great exercise for low-poly modeling,
+        PBR workflow, rendering and presentation.
+      </p>
+      <p>This project was created with the following tools:</p>
+      <ul class="custom-list">
+        <li>
+          <p>Blender - low poly modeling and animation.
+          </p>
+        </li>
+        <li>
+          <p>Substance Painter - Texturing.</p>
+        </li>
+        <li>
+          <p> Blender and Unity - Rendering and presentation.
+          </p>
+        </li>
+      
+
+    </div>
+</section>
+
+<section id="carousel1" class="carousel-section">
+  <h2>Beauty shots</h2>
+  <div class="carousel-wrap" data-speed="0.3" id="screenshotsCarouselWrap">
+    <div class="carousel-track"></div>
+  </div>
+</section>
+ 
+<div class="video-lightbox" id="videoLightbox">
+  <button class="lightbox-close" id="videoLightboxClose" aria-label="Close">&times;</button>
+  <div class="video-lightbox-content">
+    <iframe id="videoLightboxFrame" src="" frameborder="0"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
+<section id="Work" class="about-section">
+    <h2>Breakdown</h2>
+    <div class="about-content">
+      <div class = "project-grid" id="project-grid"></div>
+      
+
+    </div>
+</section> 
+
+<section id="Model" class="model-section">
+  <h2>3D Showcase</h2>
+  <div class="model-embed-wrap">
+    <iframe
+      title="DAE Robuddy - E.M.U"
+      frameborder="0"
+      loading="lazy"
+      allowfullscreen
+      mozallowfullscreen="true"
+      webkitallowfullscreen="true"
+      allow="autoplay; fullscreen; xr-spatial-tracking"
+      xr-spatial-tracking
+      execution-while-out-of-viewport
+      execution-while-not-rendered
+      web-share
+      src="https://sketchfab.com/models/af9353a4ff9c42d09a9b766b823724b3/embed?ui_theme=dark&dnt=1">
+    </iframe>
+  </div>
+</section>
+
+
+
+<div class="gallery-lightbox" id="galleryLightbox">
+  <button class="lightbox-close" id="galleryClose" aria-label="Close">&times;</button>
+  <button class="lightbox-arrow lightbox-arrow-left" id="galleryPrev" aria-label="Previous image">&#8249;</button>
+
+  <div class="gallery-lightbox-content">
+    <div id="galleryMedia" class="gallery-media"></div>
+    <div class="gallery-caption">
+      <h3 id="galleryTitle"></h3>
+      <p id="galleryDescription"></p>
+      <span id="galleryCounter"></span>
+    </div>
+  </div>
+
+  <button class="lightbox-arrow lightbox-arrow-right" id="galleryNext" aria-label="Next image">&#8250;</button>
+</div>
+  
+<!--
+<section id="carousel2" class="carousel-section">
+  <div class="carousel-wrap" data-speed="0.3">
+    <div class="carousel-track"></div>
+  </div>
+</section>
+-->
+<!-- Lightbox stays single — shared by every carousel -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+ 
+
+
+<footer id="Contact" class="site-footer">
+  <div class="footer-content">
+    <span class="footer-mark">Let's get in touch!</span>
+    <p>szilardficsor.dev@gmail.com</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/szilard-ficsor/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.youtube.com/@ardblade_games" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/ardblade_games/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <span class="footer-copyright">&copy; 2026 Szilard Ficsor. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+  let lightboxOpen = false;
+
+  function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.classList.add('active');
+    lightboxOpen = true;
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxOpen = false;
+  }
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // --- Reusable carousel builder ---
+  function initCarousel(wrap, images) {
+    const track = wrap.querySelector('.carousel-track');
+    const autoSpeed = parseFloat(wrap.dataset.speed) || 0.6;
+
+    const loopedImages = [...images, ...images, ...images];
+
+    loopedImages.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.className = 'carousel-img';
+      img.draggable = false;
+      img.dataset.src = src;
+      track.appendChild(img);
+    });
+
+    let position = 0;
+    let isDragging = false;
+    let hasDragged = false;
+    let startX = 0;
+    let startPosition = 0;
+    let oneSetWidth = 0;
+
+    function measureSetWidth() {
+      oneSetWidth = track.scrollWidth / 3;
+    }
+    window.addEventListener('load', measureSetWidth);
+    window.addEventListener('resize', measureSetWidth);
+
+    wrap.addEventListener('pointerdown', (e) => {
+      isDragging = true;
+      hasDragged = false;
+      startX = e.clientX;
+      startPosition = position;
+      wrap.classList.add('dragging');
+      wrap.setPointerCapture(e.pointerId);
+    });
+
+    wrap.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      const delta = e.clientX - startX;
+      if (Math.abs(delta) > 5) hasDragged = true;
+      position = startPosition + delta;
+    });
+
+    function endDrag(e) {
+      isDragging = false;
+      wrap.classList.remove('dragging');
+
+      if (!hasDragged) {
+        const clickedImg = document.elementFromPoint(e.clientX, e.clientY);
+        if (clickedImg && clickedImg.classList.contains('carousel-img')) {
+          openLightbox(clickedImg.dataset.src);
+        }
+      }
+    }
+    wrap.addEventListener('pointerup', endDrag);
+    wrap.addEventListener('pointerleave', endDrag);
+
+    function updateImageEffects() {
+      const wrapRect = wrap.getBoundingClientRect();
+      const centerX = wrapRect.left + wrapRect.width / 2;
+      const maxDistance = wrapRect.width / 2;
+
+      track.querySelectorAll('.carousel-img').forEach(img => {
+        const imgRect = img.getBoundingClientRect();
+        const imgCenter = imgRect.left + imgRect.width / 2;
+        const distance = Math.abs(imgCenter - centerX);
+        const ratio = Math.min(distance / maxDistance, 1);
+
+        const scale = 1 - ratio * 0.35;
+        const opacity = 1 - ratio * 0.75;
+
+        img.style.transform = `scale(${scale})`;
+        img.style.opacity = opacity;
+      });
+    }
+
+    function tick() {
+      if (!isDragging && !lightboxOpen) {
+        position -= autoSpeed;
+      }
+      if (oneSetWidth > 0) {
+        if (position <= -oneSetWidth * 2) position += oneSetWidth;
+        if (position > -oneSetWidth * 0.5) position -= oneSetWidth;
+      }
+      track.style.transform = `translateX(${position}px)`;
+      updateImageEffects();
+      requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  // --- Initialize each carousel with its own image set ---
+  initCarousel(document.getElementById('screenshotsCarouselWrap'), [
+    "Images/Robot/Robot_01.png",
+    "Images/Robot/Robot_02.png",
+    "Images/Robot/Robot_03.png",
+    "Images/Robot/Robot_04.png",
+    "Images/Robot/Robot_05.png",
+    "Images/Robot/Robot_06.png"
+    
+  ]);
+
+  //initCarousel(document.querySelectorAll('.carousel-wrap')[0], [
+    //"Images/SnackSmasher/18.png",
+    //"Images/SnackSmasher/19.png",
+    //"Images/SnackSmasher/20.png",
+    
+  //]);
+
+  //initCarousel(document.querySelectorAll('.carousel-wrap')[1], [
+    //"images/Oil.gif",
+    //"images/EvilAI.gif",
+  //]);
+</script>
+
+
+
+
+  <script src="videoCarousel.js"></script>
+
+    <script>
+    const projects = [
+      {
+        name: "Modeling",
+        type: "image",
+        src: "Images/Robot/Robot_Modeling_Lowpoly.png",
+        description: "High and low poly models.",
+        gallery: [
+          { src: "Images/Robot/Robot_Modeling_Lowpoly.png", caption: " Low poly model. Created with a clear silhouette in mind. "
+           },
+           { src: "Images/Robot/Robot_Modeling_Highpoly.png", caption: " High poly model. The mesh is triangulated and bevels are added where necessary."
+           },
+           { src: "Images/Robot/Robot_Modeling_Floaters.png", caption: " Floaters are added to the high poly model. These are details hovering on the mesh which will later be baked onto the lowpoly mesh. This way we avoid unnecessary geometry while preserving the details."
+           }
+        ]
+      },
+      {
+        name: "PBR Workflow",
+        type: "image",
+        src: "Images/Robot/Robot_Baking.png",
+        description: "PBR and texturing.",
+        gallery: [
+          { src: "Images/Robot/Robot_Baking.png", caption: "Baking the high poly details onto the low poly mesh, mainly bevels and floater details." },
+          { src: "Images/Robot/Robot_Roughness.png", caption: "Roughness" },
+          { src: "Images/Robot/Robot_Metallic.png", caption: "Metallic" },
+          { src: "Images/Robot/Robot_Normal.png", caption: "Normal" },
+          { src: "Images/Robot/Robot_Basecolor.png", caption: "Base color" }
+        ]
+      },
+      {
+        name: "Animation",
+        type: "image",
+        src: "Images/Robot/Robot_Animation.png",
+        description: "Animating in Blender.",
+        gallery: [
+           { src: "Images/Robot/Robot_Animation.png", caption: " A looping animation is created. Inverse kinematics are used for limbs, and tracking bones are used for easy animation of the head, torso and drill."
+           },
+           { type: "video", src: "Images/Robot/2IGP13_E_Ficsor_Szilard_robuddy_Blender.mp4", caption: "Final animation in Blender."
+            }
+
+
+        ]
+      },
+      {
+        name: "Rendering",
+        type: "image",
+        src: "Images/Robot/Robot_Rendering.png",
+        description: "Rendering and presentation.",
+        gallery: [
+           { src: "Images/Robot/Robot_Matcap.png", caption: " Matcap"
+           },
+           { src: "Images/Robot/Robot_Lighting.gif", caption: " Three point lighting"
+           },
+           { src: "Images/Robot/Robot_Final.png", caption: " Presentation in Blender"
+           },
+           { src: "Images/Robot/Robot_04.png", caption: " Presentation in Unity"
+           }
+
+        ]
+      }
+    ];
+  </script>
+  <script src="gallery.js"></script>
+</body>
+</html>
+</body>
+
+</html>
