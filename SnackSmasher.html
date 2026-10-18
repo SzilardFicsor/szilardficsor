@@ -90,8 +90,6 @@
 <section id="Work" class="about-section">
     <h2>My work</h2>
     <div class="about-content">
-      <p>This section of the page is under development and may contain placeholders.
-      </p>
       <p>Highlighted work I did on this project:
       </p>
       <div class = "project-grid" id="project-grid"></div>
@@ -304,12 +302,26 @@
  <script>
     const projects = [
       {
-        name: "Pixel art and effects",
-        type: "image",
-        src: "Images/SnackSmasher/Apple.png",
-        description: "Extensive pixel art visuals and effects.",
+        name: "Pixel art effects",
+        type: "video",
+        src: "Images/SnackSmasher/ElectricSpark.mp4",
+        description: "Pixel art visuals and effects.",
         gallery: [
-          { src: "Images/SnackSmasher/Apple.png", caption: "Apple sprite with hit and destruction effects." }
+          { type: "video",src: "Images/SnackSmasher/ElectricSpark.mp4", caption: "Electric spark effect." },
+          { type: "video",src: "Images/SnackSmasher/Bubbles.mp4", caption: "Bubblegum effect." },
+          { type: "video",src: "Images/SnackSmasher/Frozen.mp4", caption: "Freezing effect." }
+        ]
+      },
+      {
+        name: "Gameplay effects",
+        type: "video",
+        src: "Images/SnackSmasher/Freezing.mp4",
+        description: "Gameplay containing visual effects.",
+        gallery: [
+          { type: "video",src: "Images/SnackSmasher/Freezing.mp4", caption: "Freezing AOE." },
+          { type: "video",src: "Images/SnackSmasher/PoisonField.mp4", caption: "Poison AOE." },
+          { type: "video",src: "Images/SnackSmasher/Explosion.mp4", caption: "Exploding fruits." },
+          { type: "video",src: "Images/SnackSmasher/Typhoon.mp4", caption: "Typhoon effect." }
         ]
       },
       {
